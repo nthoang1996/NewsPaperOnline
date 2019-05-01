@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Báo Điện Tử TH16-News</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div style="position: fixed; width: 100%;height: auto; z-index: 1;" >
+			<nav class="navbar navbar-inverse my_nav" style= "margin:0px;">
+					<div class="container-fluid" >
+						<div class="navbar-header" >
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>                        
+							</button>
+							<a class="navbar-brand" href="/"><img src="logo_01.png" alt="logo_01.png" style="width:100%; height: 150%;"></a>
+						</div>
+						<div class="collapse navbar-collapse" id="myNavbar" >
+							<ul class="nav navbar-nav">
+								<li><a href="/" style="color: white;">Trang chủ</a></li>
+								<li><a href="/template/kinhte/chung.html" style="color: white;">Chuyên mục</a>
+									<ul style="z-index: 2;">
+										<li><a href="/template/kinhte/chung.html" >Kinh tế</a>
+											<ul>
+												<li><a href="/template/kinhte/chung_nong_nghiep.html">Nông nghiệp</a></li>
+													<li><a href="/template/kinhte/chung_hai_san.html">Hải sản</a></li>
+													<li><a href="/template/kinhte/chung_cong_nghiep.html">Công nghiệp</a></li>                 
+											</ul>
+										</li>
+										<li><a href="/template/vanhoa/chung.html">Văn hoá</a>
+											<ul>
+												<li><a href="/template/vanhoa/chung_doisong.html">Đời sống</a></li>
+												<li><a href="/template/vanhoa/chung_anuong.html">Ăn uống</a></li>
+												<li><a href="/template/vanhoa/chung_lehoi.html">Lễ hội</a></li>
+												<li><a href="/template/vanhoa/chung_moitruong.html">Môi trường</a></li>
+											</ul>
+											</li>
+									
+											<li><a href="/template/dulich/chung.html">Du lịch</a>
+											<ul>
+												<li><a href="/template/dulich/chung_trongnuoc.html">Trong nước</a></li>
+												<li><a href="/template/dulich/chung_ngoainuoc.html">Ngoài nước</a></li>
+											</ul>
+											</li>
+										
+											<li><a href="/template/giaitri/chung.html">Giải trí</a>
+											<ul>
+												<li><a href="/template/giaitri/chung_dienanh.html">Điện ảnh</a></li>
+												<li><a href="/template/giaitri/chung_amnhac.html">Âm nhạc</a></li>
+												<li><a href="/template/giaitri/chung_thethao.html">Thể thao</a></li>
+												<li><a href="/template/giaitri/chung_trochoidientu.html">Trò chơi điện tử</a></li>
+											</ul>
+											</li>
+							
+											<li><a href="/template/khac/chung.html">Khác</a></li>
+									</ul>
+								</li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+	</div>
+
+<div class="container-fluid">
+  	<div class="row content">
+    	<div class="col-sm-3 sidenav" id="category" style="padding: 0;background: #99CCFF; height: 2500px; margin-top: 3%;">
+			<ul style="position:fixed;">
+				<li><span ><a href="/template/kinhte/chung.html" >Kinh tế</a></span>
+					<ul>
+						<li><a href="/template/kinhte/chung_nong_nghiep.html">Nông nghiệp</a></li>
+						<li><a href="/template/kinhte/chung_hai_san.html" >Hải sản</a></li>
+						<li><a href="/template/kinhte/chung_cong_nghiep.html">Công nghiệp</a></li>                 
+					</ul>
+				</li>
+
+				<li><span><a href="/template/vanhoa/chung.html">Văn hoá</a></span>
+					<ul>
+						<li><a href="/template/vanhoa/chung_doisong.html">Đời sống</a></li>
+						<li><a href="/template/vanhoa/chung_anuong.html">Ăn uống</a></li>
+						<li><a href="/template/vanhoa/chung_lehoi.html">Lễ hội</a></li>
+						<li><a href="/template/vanhoa/chung_moitruong.html">Môi trường</a></li>
+					</ul>
+				</li>
+		
+				<li><span ><a href="/template/dulich/chung.html">Du lịch</a></span>
+					<ul>
+						<li><a href="/template/dulich/chung_trongnuoc.html">Trong nước</a></li>
+						<li><a href="/template/dulich/chung_ngoainuoc.html">Ngoài nước</a></li>
+					</ul>
+				</li>
+		
+				<li><span><a href="template/giaitri/chung.html">Giải trí</a></span>
+					<ul>
+						<li><a href="/template/giaitri/chung_dienanh.html">Điện ảnh</a></span></li>
+						<li><a href="/template/giaitri/chung_amnhac.html">Âm nhạc</a></span></li>
+						<li><a href="/template/giaitri/chung_thethao.html">Thể thao</a></li>
+						<li style = "padding: 0;"><span style="background: #DCDCDC;"><a style="color:black;" href="/template/giaitri/chung_trochoidientu.html">Trò chơi điện tử</a></span></li>
+					</ul>
+				</li>
+		
+				<li><span><a href="/template/khac/chung.html">Khác</a></span></li>
+			</ul>
+    	</div>
+
+    <div class="col-sm-6" style = "margin-left:15px; margin-top: 3%">
+      	<h4><small>Trang chủ > Chuyên mục > Giải trí > Thể thao</small></h4>
+      	<hr>
+		<!--<div class = "row" style = "margin: 2%">
+			<img src="ava-1.jpg" class="img-responsive" style="width:100%; height: 400px;" alt="Image">
+			<label style="font-size:30px;font-weight:bold; margin-top:5px; "><a href="#" style="color: black;">Sau lùm xùm, Lệ Quyên công khai mừng sinh nhật 'cô gái tháng 4' mà không hay biết… Đông Nhi sinh tháng 10</a></label>
+			<br>
+			<label style="font-size:9px;font-weight:bold;">19/04/2019 - 23:50 PM | Giải trí - Âm nhạc</label>
+		</div>
+		<hr>
+
+		<div class = "row" style = "margin-left: 2%">
+			<div class="col-sm-4">
+				<img src="4b809_e3.jpg" class="img-responsive" style="width:100%" alt="Image">
+				<label style="font-size:20px;font-weight:bold; margin-top:5px; "><a href="#" style="color: black;">Đời là ba chữ T</a></label>
+				<br>
+				<label style="font-size:9px;font-weight:bold;">23/04/2019 -  06:46 AM | Văn hoá - Đời sống</label>
+			</div>
+
+			<div class="col-sm-4">
+				<img src="dsc_0174-17_56_52_62.jpg" class="img-responsive" style="width:100%" alt="Image">
+				<label style="font-size:20px;font-weight:bold; margin-top:5px; "><a href="#" style="color: black;">Nâng cao chất lượng đội ngũ cán bộ, hội viên Hội Nhà báo Việt Nam</a></label>
+				<br>
+				<label style="font-size:9px;font-weight:bold;">19/04/2019 - 20:31 PM | Văn hoá - Đời sống</label>
+			</div>
+
+			<div class="col-sm-4">
+				<img src="IMG1317JPG.jpg" class="img-responsive" style="width:100%" alt="Image">
+				<label style="font-size:20px;font-weight:bold; margin-top:5px; "><a href="#" style="color: black;">Chương trình chi tiết các hoạt động trong Ngày văn hóa các dân tộc Việt Nam năm 2019</a></label>
+				<br>
+				<label style="font-size:9px;font-weight:bold;">18/04/2019 -  11:09 AM | Văn hoá - Lễ hội</label>
+			</div>
+		</div>
+		<hr> -->
+
+		<!--<div class = "row" style = "margin-left: 2%">
+				<div class="col-sm-3">
+					<img src="img20180621170052759-30576.jpg" class="img-responsive" style="width: 100%; height: 100%;" alt="Image">
+				</div>
+				<div class="col-sm-9" style="height:150px;">
+					<label style="font-size:15px;margin-top: 5px;"><a href="#" style="color:black;">Hải sản online – phong cách mới an toàn và tiện lợi</a></label>
+					<p style="font-size:13px;">Ngồi ở nhà vẫn thưởng thức được nhiều hải sản vùng biển tươi ngon và thanh toán tiền trực tiếp. Vì vậy, dịch vụ giao hải sản tận nhà đang khiến nhiều người tiêu dùng phát sốt tin vào mức độ tươi sống – sạch – an toàn và chất lượng...</p>
+					<label style="font-size:14px;font-weight:bold;bottom:15px;position: absolute;">22/06/2018 - 10:00 AM | Kinh tế - Hải sản</label>
+				</div>
+			</div>
+
+			<div class = "row" style = "margin-left: 2%; margin-top: 10px;">
+				<div class="col-sm-3">
+					<img src="chuyengianoigisaukhuyencaokhongnenanhaisantangday.jpg" class="img-responsive" style="width: 100%; height: 100%;" alt="Image">
+				</div>
+				<div class="col-sm-9" style="height:150px;">
+					<label style="font-size:15px; margin-top: 5px;"><a href="#" style="color:black; ">Chuyên gia nói gì sau khuyến cáo “không nên ăn hải sản tầng đáy”?</a></label>
+					<p style="font-size:13px;">“Tôi thấy khuyến cáo, cảnh báo như thế là rất tốt. Những thông tin khoa học có ảnh hưởng đến đời sống, sức khỏe, tính mạng con người thì Nhà nước cần thông báo kịp thời cho người dân” - PGS.TSKH Nguyễn Tác An - Phó Chủ tịch Hội Khoa học Kỹ thuật Biển Việt Nam, nguyên Viện trưởng Viện Hải dương học Nha Trang chia sẻ với PV Dân trí...</p>
+					<label style="font-size:14px;font-weight:bold;bottom:15px;position: absolute;">22/09/2016 - 00:09 AM | Kinh tế - Hải sản</label>
+				</div>
+			</div>
+
+			<div class = "row" style = "margin-left: 2%; margin-top: 10px;">
+				<div class="col-sm-3">
+					<img src="dt20-9ca2-1474377862238.jpg" class="img-responsive" style="width: 100%; height: 100%;" alt="Image">
+				</div>
+				<div class="col-sm-9" style="height:150px;">
+					<label style="font-size:15px; margin-top: 5px;"><a href="#" style="color:black; ">Dân hoang mang sau khuyến cáo "không sử dụng một số loại hải sản"</a></label>
+					<p style="font-size:13px;">(Báo Quảng Ngãi)- Trong năm 2017, nhiều ngư dân trong tỉnh đóng mới tàu cá công suất lớn, ứng dụng các thiết bị công nghệ cao trong khai thác hải sản. Tàu cá hiện đại đã giúp ngư dân dễ dàng chinh phục những ngư trường rộng lớn, mang lại hiệu quả kinh tế cao...</p>
+					<label style="font-size:14px;font-weight:bold;bottom:15px;position: absolute;">21/09/2016 - 07:22 AM | Kinh tế - Hải sản</label>
+				</div>
+			</div>
+
+			<div class = "row" style = "margin-left: 2%; margin-top: 10px;">
+				<div class="col-sm-3">
+					<img src="5-phu-1554821098635241558818.jpg" class="img-responsive" style="width: 100%; height: 100%;" alt="Image">
+				</div>
+				<div class="col-sm-9" style="height:150px;">
+					<label style="font-size:15px; margin-top: 5px;"><a href="#" style="color:black; ">Bình Định dựa vào biển để đi lên</a></label>
+					<p style="font-size:13px;">Phó Thủ tướng Thường trực Trương Hòa Bình đánh giá Bình Định là địa phương có tiềm năng lớn để phát triển kinh tế biển thành ngành kinh tế mũi nhọn...</p>
+					<label style="font-size:14px;font-weight:bold;bottom:15px;position: absolute;">10/04/2019 - 04:00 AM | Kinh tế - Hải sản</label>
+				</div>
+			</div>
+
+			<div class = "row" style = "margin-left: 2%; margin-top: 10px;">
+				<div class="col-sm-3">
+					<img src="hoa_ky.jpg" class="img-responsive" style="width: 100%; height: 100%;" alt="Image">
+				</div>
+				<div class="col-sm-9" style="height:150px;">
+					<label style="font-size:15px; margin-top: 5px;"><a href="#" style="color:black; ">Hoa Kỳ công bố thuế chống bán phá giá tôm Việt Nam còn 0%</a></label>
+					<p style="font-size:13px;">Rạng sáng nay, Bộ Thương mại Hoa Kỳ đã công bố 2 bị đơn bắt buộc và khoảng 30 bị đơn còn lại trong đợt xem xét thuế bán phá giá mới đối với tôm xuất khẩu từ Việt Nam về 0%...</p>
+					<label style="font-size:14px;font-weight:bold;bottom:15px;position: absolute;">15/04/2019 - 21:26 PM | Kinh tế - Hải sản</label>
+				</div>
+			</div> -->
+			
+			<div class="container">
+				<ul class="pagination" style="margin-left: 50%;">
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+							<span class="sr-only">Previous</span>
+						</a>
+					</li>
+					<li><a href="/template/kinhte/chung_nong_nghiep.html" style="color:black;">1</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+							<span class="sr-only">Next</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="col-sm-2" style="height: 2500px;">
+			<div class="well" style="height: 420px; margin-top:10%; width:400px; position: fixed;">
+				<label style="font-size: 15px; margin-top: 5%;">Follow us:</label>
+				<div>
+					<a href="https://www.facebook.com/groups/ptudw.th16.23/">
+						<img src="facebook_logos_PNG19757.png" class="img-responsive" style="width: 100px;height: 100px; margin-left: 5%; display: inline-block;" alt="Image">
+						<label style="font-size:15px; font-weight: bold;">Facebook
+							<br>
+							<span style="font-size: 15px; color:black; font-weight: bold;">5.5 k Likes</span>
+						</label>
+					</a>	
+				</div>
+				<br>
+				<div>
+					<a href="https://www.instagram.com/sad.rain1996">
+						<img src="download.jpg" class="img-responsive" style="width: 100px;height: 100px; margin-left: 5%; display: inline-block;" alt="Image">
+						<label style="font-size:15px; font-weight: bold;">Instagram
+							<br>
+							<span style="font-size: 15px; color:black; font-weight: bold;">10 k Followers</span>
+						</label>
+					</a>	
+				</div>
+				<br>
+				<div>
+					<img src="google_-512.png" class="img-responsive" style="width: 100px;height: 100px; margin-left: 5%; display: inline-block;" alt="Image">
+					<label style="font-size:15px; font-weight: bold; color: #337AB7;">Email
+						<br>
+						<span style="font-size: 15px; color:black; font-weight: bold;">nthoang1996@gmail.com</span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<footer class="container-fluid text-left" style="background-color:#4E65FF; height: 260px; padding-top: 30px; " >
+	<div class="col-sm-2">
+	</div>
+	<div class="col-sm-3">
+	  <div class="col-sm-6">
+		  <img src="logo_02.jpg" class="img-responsive" style="width: 100%; float:right;" alt="Image">
+	  </div>
+	  <div class="col-sm-6">
+		<label>Tên: Nguyễn Thái Hoàng</label>
+		</br>
+		<label>MSSV: 1412180</label>
+		</br>
+		<label>Lớp: PTUDW-TH16/2&3</label>
+	  </div>
+	</div>
+	<div class="col-sm-3">
+	  <img src="logo_truong.png" class="img-responsive" style="width: 100%; float:right;" alt="Image">
+	</div>
+	<div class="col-sm-3">
+		<label>Ngành: Công nghệ thông tin</label>
+		</br>
+		<label>Khoa: Công nghệ thông tin</label>
+		</br>
+		<label>Trường : Đại học Khoa học Tự Nhiên-ĐHQG TP.HCM</label>
+	  </div>
+	<div class="col-sm-1">
+	</div>
+  </footer>
+
+</body>
+</html>

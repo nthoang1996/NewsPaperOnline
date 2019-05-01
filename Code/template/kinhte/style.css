@@ -1,0 +1,137 @@
+.row.content {height: 1500px}
+    
+/* Set gray background color and 100% height */
+.sidenav {
+background-color: #f1f1f1;
+height: 100%;
+}
+    
+/* Set black background color, white text and some padding */
+footer {
+background-color: #555;
+color: white;
+padding: 15px;
+}
+    
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+    height: auto;
+    padding: 15px;
+    }
+    row.content {height: auto;} 
+}
+
+#category ul{
+    list-style: none;
+    padding: 0px 0px 0px 0px;
+    text-decoration: none;
+    font-size: 20px;
+    width:25%;
+}
+
+#category ul li span{
+    padding: 0px 0px 0px 10px;
+    background: blue;
+    width: 100%;
+    display: block;
+    border : 1px solid black;
+    border-radius: 5px;
+}
+
+#category ul li a{
+    color: white;
+}
+
+#category ul li ul {
+    padding: 0px 0px 0px 15px;
+    width: 100%
+}
+
+#category ul li ul li{
+    margin: 3px;
+    padding: 0px 0px 0px 10px;
+    background: #00CCFF;
+    border : 1px solid black;
+    border-radius: 5px;
+}
+
+body {
+    background: #999;
+    margin: 0;
+}
+  
+.my_nav ul {
+    text-align: left;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+.my_nav ul li{
+    font: bold 12px/18px sans-serif;
+    display: inline-block;
+    position: relative;
+    background: #222222;
+  }
+.my_nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border : 1px;
+    border-radius: 5px 5px 0px 0px;
+  }
+.my_nav ul li:hover{
+    background: #cccccc;
+    color: white;
+    border : 1px;
+    border-radius: 5px 5px 0px 0px;
+}
+.my_nav ul li ul{
+    padding: 0;
+    position: absolute;
+    left: 0;
+    width: 250px;
+    display: none;
+    visibility: hidden;
+  }
+.my_nav ul li ul li{
+    background: #cccccc;
+    display: block;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+  
+  }
+
+.my_nav ul li ul li:hover{
+    background: #4dd0e1;
+  }
+
+.my_nav ul li:hover ul{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+.my_nav ul ul ul li {
+    display: none;
+  }
+
+.my_nav ul ul li:hover li{
+    display: block;
+  }
+.my_nav ul ul ul{
+    left: 100%;
+    top: 0;
+  }
+
+  
+#selected_box_search{
+    margin: 10px;
+    width: 70%;
+    background-color: DodgerBlue;
+    color: white;
+    border: 1px solid transparent;
+    height: 40px;
+    border-radius: 10px;
+}
