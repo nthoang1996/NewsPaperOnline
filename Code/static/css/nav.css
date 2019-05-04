@@ -16,7 +16,7 @@ ul li{
   position: relative;
   background: #222222;
 }
-ul li a{
+ul > li > a{
   text-decoration: none;
   color: white;
   font-size: 18px;
@@ -24,14 +24,14 @@ ul li a{
   border : 1px;
   border-radius: 5px 5px 0px 0px;
 }
-ul li:hover{
+ul > li:hover{
   background: #cccccc;
   color: white;
   border : 1px;
   border-radius: 5px 5px 0px 0px;
 }
 
-ul li ul{
+ul > li > ul{
   padding: 0;
   position: absolute;
   left: 0;
@@ -39,7 +39,7 @@ ul li ul{
   display: none;
   visibility: hidden;
 }
-ul li ul li{
+ul > li > ul > li{
   background: #cccccc;
   display: block;
   height: 30px;
@@ -47,18 +47,18 @@ ul li ul li{
   padding: 5px;
 
 }
-ul li ul li:hover{
+ul > li > ul > li:hover{
   background: #4dd0e1;
 }
-ul li:hover ul{
+ul > li:hover > ul{
   display: block;
   opacity: 1;
   visibility: visible;
 }
-ul ul ul li {
+ul > ul > ul > li {
   display: none;
 }
-ul ul li:hover li{
+ul > ul > li:hover > li{
   display: block;
 }
 ul ul ul{

@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../static/javascript/script_popular.js"></script>
 </head>
-<body>
+<body onLoad="generateNavBarAtRight()">
 	<div style="position: fixed; width: 100%;height: auto; z-index: 1;" >
 			<nav class="navbar navbar-inverse my_nav" style= "margin:0px;">
 					<div class="container-fluid" >
@@ -62,8 +63,7 @@
 									</ul>
 								</li>
 							</ul>
-							<ul class="nav navbar-nav navbar-right">
-								<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+							<ul class="nav navbar-nav navbar-right" id="nav-user-manament">
 							</ul>
 						</div>
 					</div>
@@ -98,7 +98,7 @@
 					</ul>
 				</li>
 		
-				<li><span><a href="template/giaitri/chung.html">Giải trí</a></span>
+				<li><span><a href="/template/giaitri/chung.html">Giải trí</a></span>
 					<ul>
 						<li><a href="/template/giaitri/chung_dienanh.html">Điện ảnh</a></span></li>
 						<li style = "padding: 0;"><span style="background: #DCDCDC;"><a style="color:black;" href="/template/giaitri/chung_amnhac.html">Âm nhạc</a></span></li>
