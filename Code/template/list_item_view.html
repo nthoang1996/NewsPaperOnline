@@ -75,50 +75,25 @@
     	<div class="col-sm-3 " style="padding: 0;background: #99CCFF; height: 100%;  margin-top: 3%;"></div>
 
         <div class="col-sm-6" style = "height: 100%; margin-top: 3%">
-      	    <h4><small>Username > Xem thông tin tài khoản </small></h4>
+      	    <h4><small>Username > Quản lý bài viết </small></h4>
             <hr>
             <div class = "well" style="width: 96%;height: 90%; margin: 2%">
                 <br>
-                <label for='name' >Tên hiển thị:</label>
-                <input type="text" id="Name" class="form-control" name="name" placeholder="Name">
+								<label>Danh sách bài viết:</label>
 								<br>
-								<label for='Name_2' >Bút danh:</label>
-								<input type="text" id="Name_2" class="form-control" name="name_2" placeholder="Bút danh">
+								<table class="table-bordered" style="width:90%;">
+									<th style="width:14%; padding: 5px;">
+										<input type="checkbox">STT
+									</th>
+									<th style="width:43%;padding: 5px;">Tiêu đề</th>
+									<th style="width:43%;padding: 5px;">Ngày đăng</th>
+									<tbody>
+										<!--Auto generate data by script-->
+									</tbody>
+								</table>
 								<br>
-                <label for='user_name' >Email đăng nhập:</label>
-                <input type="text" id="email" class="form-control" name="user_name" placeholder="email" disabled>
-                <br>
-                <label for='user_name' >Mật khẩu:</label>
-                <input type="password" id="user_name" class="form-control" name="user_name" placeholder="mật khẩu" disabled>
-								<br>
-								<label for='date_of_birth' >Ngày tháng năm sinh:</label>
-								<input type="date" id="date_of_birth" class="form-control" name="date_of_birth">
-								<br>
-                <label>Quyền được cấp</label>
-                <br>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="" disabled>Phân hệ độc giả - subscriber
-                    </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="" disabled>Phân hệ phóng viên - writer
-                    </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="" disabled>Phân hệ biên tập viên - editor
-                    </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="" disabled>Phân hệ quản trị viên - administrator
-                    </label>
-                </div>
-                <br>
-                <button type="button" class="btn btn-primary">Lưu</button>
-                <button type="button" class="btn btn-danger">Huỷ bỏ</button>
+                <button type="button" class="btn btn-primary">Create</button>
+                <button type="button" class="btn btn-danger">Delete</button>
             </div>
         </div>
 

@@ -26,7 +26,7 @@ function generateNavBarAtRight()
       {
         var sub_li3= document.createElement("li");
         var a4 = document.createElement("a");
-        a4.setAttribute('href','#');
+        a4.setAttribute('href','/template/list_item_view.html');
         a4.text="Quản lý bài viết";
         sub_li3.appendChild(a4);
         ul.appendChild(sub_li3);
