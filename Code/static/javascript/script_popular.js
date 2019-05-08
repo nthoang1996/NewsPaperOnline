@@ -18,7 +18,7 @@ function generateNavBarAtRight()
       ul.appendChild(sub_li);
       var sub_li1= document.createElement("li");
       var a2 = document.createElement("a");
-      a2.setAttribute('href','#');
+      a2.setAttribute('href','/template/change_password_view.html');
       a2.text="Đổi mật khẩu";
       sub_li1.appendChild(a2);
       ul.appendChild(sub_li1);
