@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Báo Điện Tử TH16-News</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../static/javascript/script_popular.js"></script>
+	<script src="../ckeditor/ckeditor.js"></script>
+</head>
+<body onLoad="generateNavBarAtRight()">
+	<div style="position: fixed; width: 100%;height: auto; z-index: 1;" >
+			<nav class="navbar navbar-inverse my_nav" style= "margin:0px;">
+					<div class="container-fluid" >
+						<div class="navbar-header" >
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>                        
+							</button>
+							<a class="navbar-brand" href="/"><img src="../logo_01.png" alt="logo_01.png" style="width:100%; height: 150%;"></a>
+						</div>
+						<div class="collapse navbar-collapse" id="myNavbar" >
+							<ul class="nav navbar-nav">
+								<li><a href="/" style="color: white;">Trang chủ</a></li>
+								<li><a href="/template/kinhte/chung.html" style="color: white;">Chuyên mục</a>
+									<ul style="z-index: 2;">
+										<li><a href="/template/kinhte/chung.html" >Kinh tế</a>
+											<ul>
+												<li><a href="/template/kinhte/chung_nong_nghiep.html">Nông nghiệp</a></li>
+													<li><a href="/template/kinhte/chung_hai_san.html">Hải sản</a></li>
+													<li><a href="/template/kinhte/chung_cong_nghiep.html">Công nghiệp</a></li>                 
+											</ul>
+										</li>
+										<li><a href="/template/vanhoa/chung.html">Văn hoá</a>
+											<ul>
+												<li><a href="/template/vanhoa/chung_doisong.html">Đời sống</a></li>
+												<li><a href="/template/vanhoa/chung_anuong.html">Ăn uống</a></li>
+												<li><a href="/template/vanhoa/chung_lehoi.html">Lễ hội</a></li>
+												<li><a href="/template/vanhoa/chung_moitruong.html">Môi trường</a></li>
+											</ul>
+											</li>
+									
+											<li><a href="/template/dulich/chung.html">Du lịch</a>
+											<ul>
+												<li><a href="/template/dulich/chung_trongnuoc.html">Trong nước</a></li>
+												<li><a href="/template/dulich/chung_ngoainuoc.html">Ngoài nước</a></li>
+											</ul>
+											</li>
+										
+											<li><a href="/template/giaitri/chung.html">Giải trí</a>
+											<ul>
+												<li><a href="/template/giaitri/chung_dienanh.html">Điện ảnh</a></li>
+												<li><a href="/template/giaitri/chung_amnhac.html">Âm nhạc</a></li>
+												<li><a href="/template/giaitri/chung_thethao.html">Thể thao</a></li>
+												<li><a href="/template/giaitri/chung_trochoidientu.html">Trò chơi điện tử</a></li>
+											</ul>
+											</li>
+							
+											<li><a href="/template/khac/chung.html">Khác</a></li>
+									</ul>
+								</li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right" id="nav-user-manament">
+							</ul>
+						</div>
+					</div>
+				</nav>
+	</div>
+
+<div class="container-fluid">
+  	<div class="row content" style="height: 800px;">
+    	<div class="col-sm-3 " style="padding: 0;background: #99CCFF; height: 100%;  margin-top: 3%;"></div>
+
+        <div class="col-sm-6" style = "height: 100%; margin-top: 3%">
+      	    <h4><small>Username > Quản lí bài viết > Tạo </small></h4>
+            <hr>
+            <div class = "well" style="width: 96%;height: 90%; margin: 2%">
+              <br>
+							<label>Tạo bài viết:</label>
+							<br>
+							<textarea name="editor1" id="editor1" rows="10" cols="80">
+                Tạo bài viết ở đây !!!
+							</textarea>
+							<br>
+							<button type="button" class="btn btn-primary">Lưu</button>
+              <button type="button" class="btn btn-danger">Huỷ bỏ</button>
+							<script>
+                CKEDITOR.replace( 'editor1' );
+							</script>
+            </div>
+        </div>
+
+		<div class="col-sm-3"  style="padding: 0;background: #99CCFF;height: 100%; margin-top: 3%;"></div>
+	</div>
+</div>
+
+
+<footer class="container-fluid text-left" style="background-color:#4E65FF; height: 260px; padding-top: 30px; " >
+	<div class="col-sm-2">
+	</div>
+	<div class="col-sm-3">
+	  <div class="col-sm-6">
+		  <img src="../logo_02.jpg" class="img-responsive" style="width: 100%; float:right;" alt="Image">
+	  </div>
+	  <div class="col-sm-6">
+		<label>Tên: Nguyễn Thái Hoàng</label>
+		</br>
+		<label>MSSV: 1412180</label>
+		</br>
+		<label>Lớp: PTUDW-TH16/2&3</label>
+	  </div>
+	</div>
+	<div class="col-sm-3">
+	  <img src="../logo_truong.png" class="img-responsive" style="width: 100%; float:right;" alt="Image">
+	</div>
+	<div class="col-sm-3">
+		<label>Ngành: Công nghệ thông tin</label>
+		</br>
+		<label>Khoa: Công nghệ thông tin</label>
+		</br>
+		<label>Trường : Đại học Khoa học Tự Nhiên-ĐHQG TP.HCM</label>
+	  </div>
+	<div class="col-sm-1">
+	</div>
+  </footer>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 function generateNavBarAtRight()
     {
-      let authorization=1;
+      let authorization=2;
       var nav_right = document.getElementById("nav-user-manament");
       var li = document.createElement("li");
       li.setAttribute('style',"margin-top:5%;")
