@@ -1,6 +1,6 @@
 function generateNavBarAtRight()
     {
-      let authorization=2;
+      let authorization=3;
       var nav_right = document.getElementById("nav-user-manament");
       var li = document.createElement("li");
       li.setAttribute('style',"margin-top:5%;")
@@ -26,17 +26,17 @@ function generateNavBarAtRight()
       {
         var sub_li3= document.createElement("li");
         var a4 = document.createElement("a");
-        a4.setAttribute('href','/template/list_item_view.html');
+        a4.setAttribute('href','/template/list_item_view_author_2.html');
         a4.text="Quản lý bài viết";
         sub_li3.appendChild(a4);
         ul.appendChild(sub_li3);
       }
 
-      if(authorization > 2)//bien tap vien
+      if(authorization == 3)//bien tap vien
       {
         var sub_li4= document.createElement("li");
         var a5 = document.createElement("a");
-        a5.setAttribute('href','#');
+        a5.setAttribute('href','/template/list_item_view_author_3.html');
         a5.text="Quản lý bài viết";
         sub_li4.appendChild(a5);
         ul.appendChild(sub_li4);
