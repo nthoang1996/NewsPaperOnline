@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Báo Điện Tử TH16-News</title>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../_layouts/static/css/nav.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../_layouts/static/javascript/script_popular.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onLoad="generateNavBarAtRight()">
+
+<nav class="navbar navbar-inverse no-margin">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/"><img src="../_layouts/picture/logo_01.png" alt="logo_01.png" style="width:100%; height: 150%;"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/" style="color: white;">Trang chủ</a></li>
+				<li><a href="/category/" style="color: white;"> Chuyên mục</a>
+					<ul style="z-index: 2;">
+						<li><a href="/category/economic/" >Kinh tế</a>
+							<ul>
+								<li><a href="/template/kinhte/chung_nong_nghiep.html">Nông nghiệp</a></li>
+                <li><a href="/template/kinhte/chung_hai_san.html">Hải sản</a></li>
+                <li><a href="/template/kinhte/chung_cong_nghiep.html">Công nghiệp</a></li>                 
+							</ul>
+						</li>
+						<li><a href="/template/vanhoa/chung">Văn hoá</a>
+							<ul>
+                  <li><a href="/template/vanhoa/chung_doisong.html">Đời sống</a></li>
+									<li><a href="/template/vanhoa/chung_anuong.html">Ăn uống</a></li>
+									<li><a href="/template/vanhoa/chung_lehoi.html">Lễ hội</a></li>
+									<li><a href="/template/vanhoa/chung_moitruong.htm">Môi trường</a></li>
+							</ul>
+            </li>
+              
+            <li><a href="/template/dulich/chung.html">Du lịch</a>
+							<ul>
+									<li><a href="/template/dulich/chung_trongnuoc.html">Trong nước</a></li>
+									<li><a href="/template/dulich/chung_ngoainuoc.html">Ngoài nước</a></li>
+							</ul>
+            </li>
+              
+            <li><a href="/template/giaitri/chung.html">Giải trí</a>
+							<ul>
+                  <li><a href="/template/giaitri/chung_dienanh.html">Điện ảnh</a></li>
+									<li><a href="/template/giaitri/chung_amnhac.html">Âm nhạc</a></li>
+									<li><a href="/template/giaitri/chung_thethao.html">Thể thao</a></li>
+									<li><a href="/template/giaitri/chung_trochoidientu.html">Trò chơi điện tử</a></li>
+              </ul>
+            </li>
+
+            <li><a href="/template/khac/chung.html">Khác</a></li>
+				  </ul>
+			  </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" id="nav-user-manament">
+      </ul>
+    </div>
+  </div>
+</nav>
+{{{body}}}
+<footer class="container-fluid text-left" style="background-color:#4E65FF; height: 500px; padding-top: 30px; " >
+  <div class="col-sm-2">
+  </div>
+  <div class="col-sm-3">
+    <div class="col-sm-6">
+        <img src="../_layouts/picture/logo_02.jpg" class="img-responsive" style="width: 100%; float:right;" alt="Image">
+    </div>
+    <div class="col-sm-6">
+      <label>Tên: Nguyễn Thái Hoàng</label>
+      </br>
+      <label>MSSV: 1412180</label>
+      </br>
+      <label>Lớp: PTUDW-TH16/2&amp;3</label>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <img src="../_layouts/picture/logo_truong.png" class="img-responsive" style="width: 100%; float:right;" alt="Image">
+  </div>
+  <div class="col-sm-3">
+      <label>Ngành: Công nghệ thông tin</label>
+      </br>
+      <label>Khoa: Công nghệ thông tin</label>
+      </br>
+      <label>Trường : Đại học Khoa học Tự Nhiên-ĐHQG TP.HCM</label>
+    </div>
+  <div class="col-sm-1">
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  	<div class="row content" style="height: 800px;">
+    	<div class="col-sm-3 " style="padding: 0;background: #99CCFF; height: 100%; "></div>
+
+        <div class="col-sm-6" style = "height: 100%;">
+      	    <h4><small>Username > Xem danh sách chuyên mục </small></h4>
+            <hr>
+			<div class="well">
+				<label class="label label-default" style="font-size:15px;font-weight: bold;" >Chuyên mục chính</label>
+				<table class="table" style="margin-top: 15px;">
+					<thead>
+						<tr>
+						<th scope="col" style="width:30%;">Mã chuyên mục</th>
+						<th scope="col" style="width:60%;">Tên chuyên mục</th>
+						<th scope="col" style="width:5%;"></th>
+						<th scope="col" style="width:5%;"></th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each this.categories}}
+						<tr>
+							<th scope="row" ><input type="checkbox">&nbsp;{{ID}}</th>
+							<td>{{Name}}</td>
+							<td><button><i class="fa fa-eye"></i></button></td>
+							<td><button><i class="fa fa-pencil"></i></button></td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+				<button type="button" class="btn btn-primary">Thêm</button>
+				<button type="button" class="btn btn-danger">Xoá</button>
+			</div>
+			
+        </div>
+
+		<div class="col-sm-3"  style="padding: 0;background: #99CCFF;height: 100%;"></div>
+	</div>
+</div>
