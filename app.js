@@ -1,5 +1,7 @@
 var express = require('express');
 var exphbs = require('express-handlebars');
+var path = require('path');
+var morgan = require('morgan');
 
 var app = express();
 
@@ -9,14 +11,14 @@ app.engine('hbs', exphbs({
 }));
 
 app.set('view engine', 'hbs');
-app.use(express.static(__dirname + '/views'));
+app.use(express.static(path.join(__dirname + '/views')));
+app.use(express.urlencoded());
+app.use(express.json());
+app.use(morgan('dev'));
+
 
 app.get('/', (req,res) => {
     res.render('home');
-})
-
-app.get('/category/', (req,res) => {
-    res.render('_layouts/template/kinhte/chung');
 })
 
 app.use('/admin/categories', require('./routes/admin/category.routes'));
