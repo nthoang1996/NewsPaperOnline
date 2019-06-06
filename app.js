@@ -21,6 +21,7 @@ app.get('/', (req,res) => {
     res.render('home');
 })
 
+app.use('/categories', require('./routes/category.routes'));
 app.use('/admin/categories', require('./routes/admin/category.routes'));
 
 app.listen(3000, () => {

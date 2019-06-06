@@ -11,5 +11,13 @@ module.exports = {
 
     add: entity => {
         return db.add('categories', entity);
+    },
+
+    update: entity => {
+        return db.update('categories', 'ID', entity);
+    },
+
+    delete: id => {
+        return db.delete('categories', 'ID', id);
     }
 };

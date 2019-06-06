@@ -15,17 +15,17 @@
                 <form method="POST" style="margin-top:15px;" action = "/admin/categories/update">
                     <div class="form-group">
                         <label for="txtCatID">ID</label>
-                        <input readonly type="text" class="form-control" id="txtCatID" name="CatID" autofocus value="{{this.categories.ID}}">
+                        <input readonly type="text" class="form-control" id="txtCatID" name="ID" autofocus value="{{this.categories.ID}}">
                     </div>
                     <div class="form-group">
                         <label for="txtCatName">Tên chuyên mục</label>
-                        <input type="text" class="form-control" id="txtCatName" name="cn" autofocus placeholder="Vui lòng nhập tên chuyên mục" value="{{this.categories.Name}}">
+                        <input type="text" class="form-control" id="txtCatName" name="Name" autofocus placeholder="Vui lòng nhập tên chuyên mục" value="{{this.categories.Name}}">
                     </div>
                     <a class="btn btn-primary" href="/admin/categories" role="button">
                         <i class = "fa fa-backward" aria-hidden="true"></i>
                         Xem danh sách
                     </a>
-                    <button type="submit" class="btn btn-danger">
+                    <button type="submit" class="btn btn-danger" formaction="/admin/categories/delete">
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                         Xoá chuyên mục
                     </button>
