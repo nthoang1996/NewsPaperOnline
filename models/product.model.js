@@ -6,11 +6,11 @@ module.exports = {
     },
 
     allByCat: catId => {
-        return db.load(`select *from products where ProID = ${catId}`);
+        return db.load(`select *from products where Cat = ${catId}`);
     },
 
     single: id => {
-        return db.load(`select *from products where ProID = ${id}`);
+        return db.load(`select *from products where Cat = ${id}`);
     },
 
     add: entity => {

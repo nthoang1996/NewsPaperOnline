@@ -5,7 +5,7 @@ var router= express.Router();
 
 router.get('/', (req,res)=>{
     categoryModel.all()
-    then(rows => {
+    .then(rows => {
         res.render('admin/vwCategories/index', {
             categories: rows
         });
