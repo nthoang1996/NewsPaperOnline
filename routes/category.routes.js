@@ -7,6 +7,7 @@ router.get('/:id/products', (req,res)=>{
     var id = req.params.id;
     productModel.allByCat(id)
     .then(rows => {
+        console.log(res.locals.lcCategories);
         res.render('vwProducts/byCat', {
             products: rows
         });

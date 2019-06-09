@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname + '/views')));
 app.use(express.urlencoded());
 app.use(express.json());
 app.use(morgan('dev'));
+app.use(require('./middlewares/locals.mdw')); 
 
 
 app.get('/', (req,res) => {
