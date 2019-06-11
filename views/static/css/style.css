@@ -61,33 +61,33 @@ body {
     margin: 0;
 }
   
-.my_nav ul {
+/* .my_nav ul {
     text-align: left;
     display: inline;
     margin: 0;
     padding: 0;
     list-style: none;
   }
-.my_nav ul li{
+#category_nav .my_nav ul li{
     font: bold 12px/18px sans-serif;
     display: inline-block;
     position: relative;
     background: #222222;
   }
-.my_nav ul li a{
+#category_nav .my_nav ul li a{
     text-decoration: none;
     color: white;
     font-size: 18px;
     border : 1px;
     border-radius: 5px 5px 0px 0px;
   }
-.my_nav ul li:hover{
+#category_nav .my_nav ul li:hover{
     background: #cccccc;
     color: white;
     border : 1px;
     border-radius: 5px 5px 0px 0px;
 }
-.my_nav ul li ul{
+#category_nav .my_nav ul li ul{
     padding: 0;
     position: absolute;
     left: 0;
@@ -95,7 +95,7 @@ body {
     display: none;
     visibility: hidden;
   }
-.my_nav ul li ul li{
+#category_nav .my_nav ul li ul li{
     background: #cccccc;
     display: block;
     height: 30px;
@@ -104,26 +104,26 @@ body {
   
   }
 
-.my_nav ul li ul li:hover{
+#category_nav .my_nav ul li ul li:hover{
     background: #4dd0e1;
   }
 
-.my_nav ul li:hover ul{
+#category_nav .my_nav ul li:hover ul{
     display: block;
     opacity: 1;
     visibility: visible;
   }
-.my_nav ul ul ul li {
+#category_nav .my_nav ul ul ul li {
     display: none;
   }
 
-.my_nav ul ul li:hover li{
+#category_nav .my_nav ul ul li:hover li{
     display: block;
   }
-.my_nav ul ul ul{
+#category_nav .my_nav ul ul ul{
     left: 100%;
     top: 0;
-  }
+  } */
 
   
 #selected_box_search{

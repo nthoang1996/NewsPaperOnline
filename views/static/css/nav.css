@@ -5,35 +5,34 @@ body {
 .no-margin {
   margin: 0 !important;
 }
-ul {
+#myNavbar ul {
   text-align: left;
   display: inline;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-ul li{
+#myNavbar ul li{
   font: bold 12px/18px sans-serif;
   display: inline-block;
   position: relative;
   background: #222222;
 }
-ul > li > a{
+#myNavbar ul > li > a{
   text-decoration: none;
   color: white;
   font-size: 18px;
-  padding: 5px;
   border : 1px;
   border-radius: 5px 5px 0px 0px;
 }
-ul > li:hover{
+#myNavbar ul > li:hover{
   background: #cccccc;
   color: white;
   border : 1px;
   border-radius: 5px 5px 0px 0px;
 }
 
-ul > li > ul{
+#myNavbar ul > li > ul{
   padding: 0;
   position: absolute;
   left: 0;
@@ -41,7 +40,7 @@ ul > li > ul{
   display: none;
   visibility: hidden;
 }
-ul > li > ul > li{
+#myNavbar ul > li > ul > li{
   background: #cccccc;
   display: block;
   height: 30px;
@@ -49,21 +48,21 @@ ul > li > ul > li{
   padding: 5px;
 
 }
-ul > li > ul > li:hover{
+#myNavbar ul > li > ul > li:hover{
   background: #4dd0e1;
 }
-ul > li:hover > ul{
+#myNavbar ul > li:hover > ul{
   display: block;
   opacity: 1;
   visibility: visible;
 }
-ul > ul > ul > li {
+#myNavbar ul > ul > ul > li {
   display: none;
 }
-ul > ul > li:hover > li{
+#myNavbar ul > ul > li:hover > li{
   display: block;
 }
-ul ul ul{
+#myNavbar ul ul ul{
   left: 100%;
   top: 0;
 }

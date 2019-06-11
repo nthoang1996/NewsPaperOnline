@@ -7,7 +7,12 @@ var app = express();
 
 app.engine('hbs', exphbs({
     defaultLayout: 'main.hbs',
-    layoutsDir: 'views/_layouts'
+    layoutsDir: 'views/_layouts',
+    // helpers: {
+    //     format: val => {
+    //         return val + 'abc';
+    //     }
+    // }
 }));
 
 app.set('view engine', 'hbs');

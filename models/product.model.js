@@ -6,11 +6,19 @@ module.exports = {
     },
 
     allByCat: catId => {
-        return db.load(`select *from products where Cat = ${catId}`);
+        return db.load(`select * from products where Cat = ${catId}`);
+    },
+
+    pageByCat: (catId, limit, offset) => {
+        return db.load(`select * from products where Cat = ${catId} limit ${limit} offset ${offset}`);
+    },
+
+    countByCat: catId => {
+        return db.load(`select count(*) as total from products where Cat = ${catId}`);
     },
 
     single: id => {
-        return db.load(`select *from products where Cat = ${id}`);
+        return db.load(`select * from products where Cat = ${id}`);
     },
 
     add: entity => {

@@ -1,11 +1,24 @@
 <div class="container-fluid">
-  	<div class="row content" style="height: 800px;">
+  	<div class="row content">
     	<div class="col-sm-3 " style="padding: 0;background: #99CCFF; height: 100%; "></div>
 
         <div class="col-sm-6" style = "height: 100%;">
       	    <h4><small>Username > Xem danh sách chuyên mục </small></h4>
             <hr>
 			<div class="well">
+				<label class="label label-default" style="font-size:15px;font-weight: bold;" >Thông tin chi tiết các chuyên mục</label>
+				<div style="margin-top: 15px">
+					<ul class="list-group list-group-flush">
+						{{#each lcCategories}}
+							<a href="/categories/{{ID}}/products" class="list-group-item list-group-item-action {{#if isActive}}active{{/if}}">{{Name}}
+							{{#if num_of_products}}
+								<span class = "badge badge-primary float-right">{{num_of_products}}</span>
+							{{/if}}
+							</a>
+						{{/each}}
+					</ul>
+				</div>
+				<br>
 				<label class="label label-default" style="font-size:15px;font-weight: bold;" >Chuyên mục chính</label>
 				<table class="table" style="margin-top: 15px;">
 					<thead>
