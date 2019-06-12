@@ -3,7 +3,7 @@ var productModel = require('../models/product.model');
 
 var router= express.Router();
 
-router.get('/:id/products', (req,res)=>{
+router.get('/:id/products', (req,res, next)=>{
     var id = req.params.id;
     var page = req.query.page || 1;
     if(page < 1){
@@ -37,7 +37,7 @@ router.get('/:id/products', (req,res)=>{
             pages
         });
     })
-    .catch(err => {})
+    .catch(next);
 
     // productModel.pageByCat(id, limit, offset)
     // .then(rows => {

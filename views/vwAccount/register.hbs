@@ -1,0 +1,107 @@
+{{#section 'js'}}
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script>
+    $(function(){
+        $('#registerForm').validate({
+            rules:{
+                username:{
+                    required: true
+                },
+                name:{
+                    required:true
+                },
+                email:{
+                    required:true,
+                    email: true
+                },
+                password:{
+                    required: true,
+                    minlength: 6
+                },
+                confirm: {
+                    required: true,
+                    equalTo: $('[name = "password"]')
+                },
+                date_of_birth:{
+                    required: true
+                }
+                
+            },
+            messages:{
+                username:{
+                    required: 'Vui lòng nhập tên hiển thị của bạn.',
+                },
+                name:{
+                    required: 'Vui lòng nhập bút danh của bạn.',
+                },
+                email:{
+                    required: 'Vui lòng nhập email của bạn.',
+                    email: 'Địa chỉ email của bạn không hợp lệ.'
+                },
+                password:{
+                    required: 'Vui lòng nhập mật khẩu.',
+                    minlength: 'Mật khẩu phải có ít nhất 6 kí tự.'
+                },
+                confirm:{
+                    required: 'Vui lòng xác nhận mật khẩu.',
+                    equalTo: 'Mật khẩu bạn xác nhận không trùng khớp.'
+                },
+                date_of_birth:{
+                    required: 'Vui lòng nhập ngày tháng năm sinh của bạn.'
+                },
+            },
+            errorElement: 'small',
+            errorClass: 'help-block my-text-danger',
+            highlight: function(e) {
+                $(e).removeClass('is-valid').addClass('my-is-invalid');
+            },
+            unhighlight: function(e) {
+                $(e).removeClass('my-is-invalid').addClass('is-valid');
+            },
+        })
+    })
+</script>
+{{/section}}
+<div class="wrapper fadeInDown" style="background-image: url('/picture/background_register.jpg');">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="/picture/logo_3.png" id="icon" alt="User Icon" />
+        </div>
+                
+        <!-- Login Form -->
+        <form novalidate action="" method="POST" id="registerForm">
+            <div class="form-group">
+                <label for='name' >Tên hiển thị:</label>
+                <input type="text" id="Name" class="fadeIn second" name="name" placeholder="Họ Tên">
+            </div>
+            <div class="form-group">
+                <label for='username' >Bút danh:</label>
+                <input type="text" id="username" class="fadeIn second" name="username" placeholder="Bút danh" autofocus>
+            </div>
+            <div class="form-group">
+                <label for='email' >Email đăng nhập:</label>
+                <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for='password' >Mật khẩu:</label>
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="mật khẩu">
+            </div>
+            <div class="form-group">
+                <label for='confirm' >Xác nhận mật khẩu:</label>
+                <input type="password" id="confirm" class="fadeIn third" name="confirm" placeholder="Xác nhận mật khẩu">
+            </div>
+            <div class="form-group">
+                <label for='date_of_birth' >Ngày tháng năm sinh:</label>
+                <input type="date" id="date_of_birth" class="fadeIn second" name="date_of_birth">
+            </div>
+            <input type="submit" class="fadeIn fourth" value="Register">
+        </form>
+                
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <p>Already have account. <a style="text-decoration: none;" class="underlineHover" href="/template/login_view.html">Login</a></p>         
+        </div>
+    </div>
+</div>
