@@ -1,11 +1,23 @@
+{{#section 'css'}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+{{/section}}
 {{#section 'js'}}
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
 <script>
     $(function(){
+        $('#date_of_birth').datetimepicker({
+            format: 'd/m/Y',
+            timepicker: false,
+            mask: true,
+        });
         $('#registerForm').validate({
             rules:{
                 username:{
-                    required: true
+                    required: true,
+                    remote: {
+                        url: '/account/is_available'
+                    }
                 },
                 name:{
                     required:true
@@ -29,10 +41,11 @@
             },
             messages:{
                 username:{
-                    required: 'Vui lòng nhập tên hiển thị của bạn.',
+                    required: 'Vui lòng nhập bút danh của bạn.',
+                    remote: 'Bút danh đã tồn tại. Vui lòng chọn bút danh khác'
                 },
                 name:{
-                    required: 'Vui lòng nhập bút danh của bạn.',
+                    required: 'Vui lòng nhập tên của bạn.',
                 },
                 email:{
                     required: 'Vui lòng nhập email của bạn.',
@@ -62,7 +75,7 @@
     })
 </script>
 {{/section}}
-<div class="wrapper fadeInDown" style="background-image: url('/picture/background_register.jpg');">
+<div class="wrapper fadeInDown" style="background-image: url('/picture/background_register.jpg'); background-size:100% 100%;">
     <div id="formContent">
         <!-- Tabs Titles -->
         <!-- Icon -->
@@ -70,7 +83,6 @@
             <img src="/picture/logo_3.png" id="icon" alt="User Icon" />
         </div>
                 
-        <!-- Login Form -->
         <form novalidate action="" method="POST" id="registerForm">
             <div class="form-group">
                 <label for='name' >Tên hiển thị:</label>
@@ -94,14 +106,13 @@
             </div>
             <div class="form-group">
                 <label for='date_of_birth' >Ngày tháng năm sinh:</label>
-                <input type="date" id="date_of_birth" class="fadeIn second" name="date_of_birth">
+                <input type="text" id="date_of_birth" class="fadeIn second" name="date_of_birth">
             </div>
-            <input type="submit" class="fadeIn fourth" value="Register">
+            <input type="submit" class="fadeIn fourth" value="Đăng ký">
         </form>
                 
-        <!-- Remind Passowrd -->
         <div id="formFooter">
-            <p>Already have account. <a style="text-decoration: none;" class="underlineHover" href="/template/login_view.html">Login</a></p>         
+            <p>Đã tạo tài khoản?<a style="text-decoration: none;" class="underlineHover" href="/account/login">&nbsp;Đăng nhập</a></p>         
         </div>
     </div>
 </div>

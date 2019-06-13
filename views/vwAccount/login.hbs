@@ -1,0 +1,45 @@
+
+<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Báo Điện Tử TH16-News</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/css/login_css.css">
+</head>
+<body style="background:url(background.jpg);background-size:100% 100%;">
+    <div class="wrapper fadeInDown" style="background-image: url('/picture/background_register.jpg'); background-size:100% 100%;">
+        <div id="formContent">
+        <!-- Tabs Titles -->
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="/picture/logo_3.png" id="icon" alt="User Icon" />
+        </div>
+              
+        <!-- Login Form -->
+        <form method="POST">
+            <input type="text" id="login" class="fadeIn second" name="username" placeholder="Tên đăng nhập">
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Mật khẩu">
+            <input type="submit" class="fadeIn fourth" value="Đăng nhập">
+        </form>
+        
+        {{#if err_message}}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{err_message}}
+        </div>
+        {{/if}}
+              
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <p>Chưa có tài khoản<a style="text-decoration: none;" class="underlineHover" href="/account/register">&nbsp;Tạo tài khoản</a></p>
+            <a style="text-decoration: none;" class="underlineHover" href="#">&nbsp;Quên mật khẩu</a>
+        </div>
+    </div>
+</body>
