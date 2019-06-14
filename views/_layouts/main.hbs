@@ -12,7 +12,6 @@
   <script type="text/javascript" src="/static/javascript/script_popular.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/static/css/login_css.css">
   {{{_sections.css}}}
   {{{_sections.js}}}
 </head>
@@ -69,7 +68,21 @@
 				  </ul>
 			  </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right" id="nav-user-manament">
+      {{!-- <ul class="nav navbar-nav navbar-right" id="nav-user-manament"></ul> --}}
+      <form id = "frmSignout" action="/account/logout" method="POST"></form>
+      <ul class="nav navbar-nav navbar-right">
+        {{#if isAuthenticated}}
+          <li style="margin-top:5%;"><a style="color: black; width: 205px; font-weight:50; border: 1px solid white; border-radius: 5%; background-color:#CCCCCC;padding-top:5px; padding-bottom:5px;">{{authUser}}</a>
+            <ul style="z-index: 2;">
+              <li><a href="/account/profile">Xem thông tin tài khoản</a></li>
+              <li><a href="/template/change_password_view.html">Đổi mật khẩu</a></li>
+              <li><a href="/template/list_item_view_author_3.html">Quản lý bài viết</a></li>
+              <li><a href="javascript: $('#frmSignout').submit();">Đăng xuất</a></li>
+            </ul>
+          </li>
+        {{else}}
+          <li><a href="/account/login" style="color:white;">Login</a></li>
+        {{/if}}
       </ul>
     </div>
   </div>

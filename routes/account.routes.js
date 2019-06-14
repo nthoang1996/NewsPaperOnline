@@ -3,6 +3,7 @@ var bcrypt = require('bcrypt');
 var moment = require ('moment');
 var userModel = require('../models/user.model');
 var passport = require('passport');
+var auth = require('../middlewares/auth')
 
 var router= express.Router();
 
@@ -47,7 +48,7 @@ router.get('/login', (req, res, next) =>{
     });
 })
 
-router.post('/login', (req, res, next) =>{
+router.post('/login',(req, res, next) =>{
     passport.authenticate('local', (err, user, info) => {
         if (err)
           return next(err);
@@ -60,12 +61,26 @@ router.post('/login', (req, res, next) =>{
         }
     
         req.logIn(user, err => {
-          if (err)
+          if (err){
             return next(err);
-    
+          }
           return res.redirect('/');
         });
+        console.log("=================================================================login");
+        console.log(req);
     })(req, res, next);
 })
+
+router.get('/profile', auth, (req, res, next) =>{
+    // res.render('vwAccount/login',{
+    //     layout: false
+    // });
+    res.end('profile');
+})
+
+router.post('/logout', auth, (req, res, next) => {
+    req.logOut();
+    res.redirect('/account/login');
+  })
 
 module.exports = router;
