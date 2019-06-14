@@ -25,13 +25,16 @@ module.exports = function (app){
         }).catch(err => {
             return done(err, false);
         })
+        console.log("passport")
     });
 
     passport.use(ls);
     passport.serializeUser((user, done) => {
+        console.log("serializeUser");
         return done(null, user);
     });
     passport.deserializeUser((user, done) => {
+        console.log("deserializeUser");
         return done(null, user);
     });
 }
