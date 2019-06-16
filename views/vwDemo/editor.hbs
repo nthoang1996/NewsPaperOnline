@@ -1,0 +1,69 @@
+{{#section 'css'}}
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+{{/section}}
+
+{{#section 'js'}}
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script>
+    $(function(){
+        var toolbarOptions = [
+            ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+            ['blockquote', 'code-block'],
+
+            [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+            [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+            [{ 'direction': 'rtl' }],                         // text direction
+
+            [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+            [ 'link', 'image', 'video', 'formula' ],          // add's image support
+            [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+            [{ 'font': [] }],
+            [{ 'align': [] }],
+
+            ['clean']                                         // remove formatting button
+        ];
+
+        var quill = new Quill('#Content', {
+            modules: {
+                toolbar: toolbarOptions
+            },
+            theme: 'snow'
+        });
+    })
+</script>
+{{/section}}
+<div class="container-fluid">
+  	<div class="row content" style="height: 800px;">
+    	<div class="col-sm-3 " style="padding: 0;background: #99CCFF; height: 100%; "></div>
+
+        <div class="col-sm-6" style = "height: 100%;">
+      	    <h4><small>Username > Xem danh sách bài viết > Tạo bài viết </small></h4>
+            <hr>
+			<div class="well">
+                <label class="label label-primary" style="font-size:15px;font-weight: bold;" >Tạo bài viết</label>
+                
+				<form method="POST" style="margin-top:15px;">
+                    <div class="form-group">
+                        <label for="Title">Tiêu đề</label>
+                        <input type="text" class="form-control" id="Title" name="Title" autofocus placeholder="Vui lòng nhập tiêu đề bài viết">
+                    </div>
+                     <div class="form-group">
+                        <label for="Content">Nội dung</label>
+                        <textarea class="form-control" id="Content" name="Content" style="height: 300px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        Lưu
+                    </button>
+                </form>
+			</div>
+			
+        </div>
+
+		<div class="col-sm-3"  style="padding: 0;background: #99CCFF;height: 100%;"></div>
+	</div>
+</div>

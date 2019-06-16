@@ -1,0 +1,45 @@
+{{#section 'css'}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.3/css/fileinput.min.css" type="text/css">
+{{/section}}
+{{#section 'js'}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.3/js/fileinput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.3/themes/explorer-fa/theme.min.js"></script>
+<script>
+    $(function(){
+        $('#fuMain').fileinput({
+            theme: 'fa',
+            dropZoneEnabled: false,
+            allowedFileExtensions: ['png', 'jpg', 'gif'],
+            uploadUrl: '/upload',
+            uploadAsync: false,
+        })
+    })
+</script>
+{{/section}}
+<div class="container-fluid">
+  	<div class="row content" style="height: 800px;">
+    	<div class="col-sm-3 " style="padding: 0;background: #99CCFF; height: 100%; "></div>
+
+        <div class="col-sm-6" style = "height: 100%;">
+      	    <h4><small>Username > Xem danh sách chuyên mục > Tạo bài viết </small></h4>
+            <hr>
+			<div class="well">
+                <label class="label label-primary" style="font-size:15px;font-weight: bold;" >Tải lên tập tin</label>
+                
+				<form method="POST" style="margin-top:15px;">
+                    <div class="form-group">
+                        <label for="fuMain">Tập tin</label>
+                        <input type="file" class="form-control" id="fuMain" name="fuMain" multiple>
+                    </div>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        Lưu
+                    </button>
+                </form>
+			</div>
+			
+        </div>
+
+		<div class="col-sm-3"  style="padding: 0;background: #99CCFF;height: 100%;"></div>
+	</div>
+</div>

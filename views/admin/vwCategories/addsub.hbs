@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  	<div class="row content" style="height: 800px;">
+    	<div class="col-sm-3 " style="padding: 0;background: #99CCFF; height: 100%; "></div>
+
+        <div class="col-sm-6" style = "height: 100%;">
+      	    <h4><small>Username > Xem danh sách chuyên mục > Thêm chuyên mục </small></h4>
+            <hr>
+			<div class="well">
+                <label class="label label-primary" style="font-size:15px;font-weight: bold;" >Thêm chuyên mục con</label>
+                
+				<form method="POST" style="margin-top:15px;">
+                    <div class="form-group">
+                        <label class="label label-info" id="lbl_subcat" style="font-size: 15px; font-weight: bold; float: right;">{{this.name}}</label>
+                        <label for="txtCatName">Tên chuyên mục</label>
+                        <input type="text" class="form-control" id="txtCatName" name="Name" autofocus placeholder="Vui lòng nhập tên chuyên mục">
+                    </div>
+                    <a class="btn btn-primary" href="/admin/categories" role="button">
+                        <i class = "fa fa-backward" aria-hidden="true"></i>
+                        Xem danh sách
+                    </a>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        Lưu
+                    </button>
+                </form>
+			</div>
+			
+        </div>
+
+		<div class="col-sm-3"  style="padding: 0;background: #99CCFF;height: 100%;"></div>
+	</div>
+</div>

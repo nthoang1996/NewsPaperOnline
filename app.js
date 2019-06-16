@@ -1,12 +1,14 @@
 var express = require('express');
 var path = require('path');
 var morgan = require('morgan');
+bodyParser = require('body-parser');
 
 var app = express();
 
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname + '/views')));
-app.use(express.urlencoded());
+// app.use(express.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(require('./middlewares/auth-locals.mdw'));
@@ -14,6 +16,7 @@ app.use(require('./middlewares/locals.mdw'));
 require('./middlewares/view-engine')(app);
 require('./middlewares/session')(app);
 require('./middlewares/passport')(app);
+require('./middlewares/upload')(app);
 
 
 app.get('/', (req,res) => {
@@ -22,6 +25,7 @@ app.get('/', (req,res) => {
 app.use('/categories', require('./routes/category.routes'));
 app.use('/admin/categories', require('./routes/admin/category.routes'));
 app.use('/account', require('./routes/account.routes'));
+app.use('/demo', require('./routes/demo.routes'));
 app.use((req, res, next) => {
     res.render('404', {layout:false});
 })

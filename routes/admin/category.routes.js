@@ -40,8 +40,54 @@ router.get('/edit/:id', (req,res)=>{
     });
 })
 
+router.get('/view/:id', (req,res)=>{
+    var id = req.params.id;
+    if(isNaN(id)){
+        res.render('admin/vwCategories/', {
+            error: true
+        });
+    }
+
+    categoryModel.subCatWithCatID(id).then(rows => {
+        if(rows.length>0){
+            res.send( {
+                error: false,
+                categories: rows
+            });
+        }else {
+            res.send({
+                error: true
+                
+            });
+        }
+    }).catch(err => {
+        console.log(err);
+        res.end('error ocurred.');
+    });
+})
+
 router.get('/add', (req,res)=>{
+    console.log(req);
     res.render('admin/vwCategories/add');
+})
+
+router.get('/add/:parent_id&:parent_name', (req,res)=>{
+    var id = req.params.parent_id;
+    var name = req.params.parent_name;
+    if(isNaN(id)){
+        res.render('admin/vwCategories/addsub', {
+            error: true
+        });
+    }
+    categoryModel.single(id). then(rows => {
+        res.render('admin/vwCategories/addsub', {
+            id: id,
+            name: name
+        });
+    }).catch(err => {
+        console.log(err);
+        res.end('error ocurred.');
+    });
 })
 
 router.post('/add', (req,res)=>{

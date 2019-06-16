@@ -1,3 +1,87 @@
+<script>
+	function viewSubCategory(parent_id, parent_name){
+		$.get("/admin/categories/view/"+ parent_id, function(data, status){
+			$('#subtable').remove();
+			$('#header').empty();
+			var lbl=document.createElement('label');
+			lbl.classList.add('label');
+			lbl.classList.add('label-info');
+			lbl.style.fontSize = "15px";
+			lbl.style.fontWeight = "bold";
+			lbl.style.float = "left";
+			lbl.setAttribute("id", "lbl_subcat")
+			lbl.innerText = parent_name;
+
+			var aTag= document.createElement('a');
+			aTag.href = "/admin/categories/add/" + parent_id + "&" + parent_name;
+			aTag.classList.add("btn");
+			aTag.classList.add("btn-primary");
+			aTag.setAttribute("role", "button");
+			var iTag = document.createElement('i');
+			iTag.classList.add("fa");
+			iTag.classList.add("fa-plus");
+			iTag.setAttribute("aria-hidden", "true");
+			aTag.appendChild(iTag);
+			aTag.appendChild(document.createTextNode("Thêm chuyên mục"));
+			$('#header').append(aTag);
+
+			var tbl = document.createElement('table');
+			tbl.setAttribute("id", "subtable");
+			tbl.style.marginTop = '15px';
+			tbl.classList.add("table");
+			var thead = document.createElement('thead');
+			var tr = document.createElement('tr');
+			var th = document.createElement('th');
+			th.style.width = '30%';
+			th.scope = "col";
+			th.appendChild(document.createTextNode("Mã chuyên mục"));
+			tr.appendChild(th);
+			var th = document.createElement('th');
+			th.style.width = '65%';
+			th.scope = "col";
+			th.appendChild(document.createTextNode("Tên chuyên mục"));
+			tr.appendChild(th);
+			var th = document.createElement('th');
+			th.style.width = '5%';
+			th.scope = "col";
+			th.appendChild(document.createTextNode(""));
+			tr.appendChild(th);
+			thead.appendChild(tr);
+			tbl.appendChild(thead);
+			if(data.categories){
+				var tbdy = document.createElement('tbody');
+				for (var i = 0; i < data.categories.length; i++) {
+					var tr = document.createElement('tr');
+					var th = document.createElement('th');
+					th.scope = "row";
+					th.appendChild(document.createTextNode(" "+ data.categories[i].ID));
+					tr.appendChild(th);
+					var td = document.createElement('td');
+					td.appendChild(document.createTextNode(data.categories[i].Name));
+					tr.appendChild(td);
+					var td = document.createElement('td');
+					var iTag = document.createElement('i');
+					iTag.classList.add("fa");
+					iTag.classList.add("fa-pencil");
+					var aTag = document.createElement('a');
+					aTag.classList.add("btn");
+					aTag.classList.add("btn-success");
+					aTag.href = "/admin/categories/edit/" + data.categories[i].ID;
+					aTag.appendChild(iTag);
+					td.appendChild(aTag);
+					tr.appendChild(td);
+					tr.appendChild(td);
+					tbdy.appendChild(tr);
+			}
+			tbl.appendChild(tbdy);
+
+			}
+			$('#header').append(lbl);
+			$('#subcategory').append(tbl);
+			$('#subcategory').removeClass( "hidden" );
+		});
+	}
+</script>
 <div class="container-fluid">
   	<div class="row content">
     	<div class="col-sm-3 " style="padding: 0;background: #99CCFF; height: 100%; "></div>
@@ -7,7 +91,14 @@
             <hr>
 			<div class="well">
 				<label class="label label-default" style="font-size:15px;font-weight: bold;" >Thông tin chuyên mục</label>
-				<label class="label label-default" style="font-size:15px;font-weight: bold;" >Chuyên mục chính</label>
+				<hr>
+				<div class="text-right">
+					<label class="label label-default" style="font-size:15px;font-weight: bold; float:left;" >Chuyên mục chính</label>
+					<a href="/admin/categories/add" class="btn btn-primary" role="button">
+						<i class = "fa fa-plus" aria-hidden="true"></i>
+						Thêm chuyên mục
+					</a>
+				</div>
 				<table class="table" style="margin-top: 15px;">
 					<thead>
 						<tr>
@@ -20,19 +111,20 @@
 					<tbody>
 						{{#each this.categories}}
 						<tr>
-							<th scope="row" ><input type="checkbox">&nbsp;{{ID}}</th>
+							<th scope="row" >&nbsp;{{ID}}</th>
 							<td>{{Name}}</td>
-							<td><a class="btn btn-info" href="javascript:"><i class="fa fa-eye"></i></a></td>
+							<td><a class="btn btn-info" href="javascript:viewSubCategory('{{ID}}', '{{Name}}')" ><i class="fa fa-eye"></i></a></td>
 							<td><a class="btn btn-success" href="/admin/categories/edit/{{ID}}"><i class="fa fa-pencil"></i></a></td>
 						</tr>
 						{{/each}}
 					</tbody>
 				</table>
-				<a href="/admin/categories/add" class="btn btn-primary" role="button">
-					<i class = "fa fa-plus" aria-hidden="true"></i>
-					Thêm chuyên mục
-				</a>
-				<button type="button" class="btn btn-danger">Xoá</button>
+				<div id="subcategory" class="hidden" style="margin-top: 50px;">
+					<hr>
+					<label id="label_subcategory" class="label label-default" style="font-size:15px;font-weight: bold;" ></label>
+					<div id="header" class="text-right">
+					</div>
+				</div>
 			</div>
 			
         </div>

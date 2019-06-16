@@ -38,36 +38,6 @@ router.get('/:id/products', (req,res, next)=>{
         });
     })
     .catch(next);
-
-    // productModel.pageByCat(id, limit, offset)
-    // .then(rows => {
-    //     for (const c of res.locals.lcCategories){
-    //         if (c.ID === +id){
-    //             c.isActive = true;
-    //         }
-    //     }
-    //     res.render('vwProducts/byCat', {
-    //         products: rows
-    //     });
-    // }).catch(err => {
-    //     console.log(err);
-    //     res.end('error ocurred.');
-    // });
-
-    // productModel.allByCat(id)
-    // .then(rows => {
-    //     for (const c of res.locals.lcCategories){
-    //         if (c.ID === +id){
-    //             c.isActive = true;
-    //         }
-    //     }
-    //     res.render('vwProducts/byCat', {
-    //         products: rows
-    //     });
-    // }).catch(err => {
-    //     console.log(err);
-    //     res.end('error ocurred.');
-    // });
 })
 
 module.exports = router;
