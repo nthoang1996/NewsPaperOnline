@@ -21,6 +21,10 @@ module.exports = {
         return db.add('categories', entity);
     },
 
+    addSubCategory: (entity,id) => {
+        return db.addSubCategory('categories', entity, id);
+    },
+
     update: entity => {
         return db.update('categories', 'ID', entity);
     },

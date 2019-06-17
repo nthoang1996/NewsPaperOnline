@@ -27,6 +27,24 @@ module.exports = {
 
     add: (tableName, entity) => {
         return new Promise((resolve, reject) => {
+            entity['is_dir'] = 1;
+            var sql = `insert into ${tableName} set ?`;
+            var connection = createConnection();
+            connection.connect();
+            connection.query(sql, entity, (error, value) => {
+                if (error)
+                    reject(error);
+                else {
+                    resolve(value.insertId);
+                }        
+                connection.end();
+            });
+        });
+    },
+
+    addSubCategory: (tableName, entity, id) => {
+        return new Promise((resolve, reject) => {
+            entity['parent_id'] = id;
             var sql = `insert into ${tableName} set ?`;
             var connection = createConnection();
             connection.connect();

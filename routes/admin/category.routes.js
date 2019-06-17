@@ -67,8 +67,18 @@ router.get('/view/:id', (req,res)=>{
 })
 
 router.get('/add', (req,res)=>{
-    console.log(req);
     res.render('admin/vwCategories/add');
+})
+
+router.post('/add', (req,res)=>{
+    categoryModel.add(req.body)
+    .then(id => {
+        res.render('admin/vwCategories/add');
+    })
+    .catch(err => {
+        console.log(err);
+        res.end('error ocurred.');
+    })
 })
 
 router.get('/add/:parent_id&:parent_name', (req,res)=>{
@@ -90,8 +100,8 @@ router.get('/add/:parent_id&:parent_name', (req,res)=>{
     });
 })
 
-router.post('/add', (req,res)=>{
-    categoryModel.add(req.body)
+router.post('/add/:parent_id&:parent_name', (req,res)=>{
+    categoryModel.addSubCategory(req.body, req.params.parent_id)
     .then(id => {
         res.render('admin/vwCategories/add');
     })

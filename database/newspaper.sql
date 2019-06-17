@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2019 at 03:32 AM
+-- Generation Time: Jun 17, 2019 at 03:53 AM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -33,7 +33,7 @@ CREATE TABLE `categories` (
   `Name` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
   `is_dir` tinyint(4) DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
-  `is_del` tinyint(4) DEFAULT NULL
+  `is_del` tinyint(4) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -41,7 +41,6 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`ID`, `Name`, `is_dir`, `parent_id`, `is_del`) VALUES
-(0, 'Tao là vô địt', NULL, NULL, NULL),
 (1, 'Kinh tế', 1, NULL, 0),
 (2, 'Nông nghiệp', 0, 1, 0),
 (3, 'Hải sản', 0, 1, 0),
@@ -59,7 +58,9 @@ INSERT INTO `categories` (`ID`, `Name`, `is_dir`, `parent_id`, `is_del`) VALUES
 (15, 'Âm nhạc', 0, 13, 0),
 (16, 'Thể thao', 0, 13, 0),
 (17, 'Trò chơi điện tử', 0, 13, 0),
-(18, 'Khác', 1, NULL, 0);
+(18, 'Khác', 1, NULL, 0),
+(25, '12123', NULL, NULL, 0),
+(29, '2131453453a', NULL, 18, 0);
 
 -- --------------------------------------------------------
 
@@ -135,6 +136,12 @@ ALTER TABLE `products`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `products`
