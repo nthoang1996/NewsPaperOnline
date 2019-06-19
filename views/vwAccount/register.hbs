@@ -1,5 +1,6 @@
 {{#section 'css'}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+<link rel="stylesheet" href="/static/css/login_css.css">
 {{/section}}
 {{#section 'js'}}
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
@@ -66,10 +67,10 @@
             errorElement: 'small',
             errorClass: 'help-block my-text-danger',
             highlight: function(e) {
-                $(e).removeClass('is-valid').addClass('my-is-invalid');
+                $(e).removeClass('is-valid').addClass('my-is-invalid-bottom');
             },
             unhighlight: function(e) {
-                $(e).removeClass('my-is-invalid').addClass('is-valid');
+                $(e).removeClass('my-is-invalid-bottom').addClass('is-valid');
             },
         })
     })

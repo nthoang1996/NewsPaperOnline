@@ -2,7 +2,15 @@ var db= require('../utils/db');
 
 module.exports = {
     all: ()=> {
-        return db.load("select * from products where is_dir = true and is_del = false");
+        return db.load("select * from products where is_del = false");
+    },
+   
+    pageByParentCat:  (catId, limit, offset)  => {
+        return db.load(`select p.ID, p.Title, p.Avatar, p.Summary, p.Content, p.Date_Create from products p left join categories c on c.ID = p.Cat  where c.parent_id = ${catId} and can_views = 'Acepted' order by Date_Create DESC limit ${limit} offset ${offset}`);
+    },
+
+    countByParentCat: catId => {
+        return db.load(`select count(*) as total from products p left join categories c on c.ID = p.Cat  where c.parent_id = ${catId} and can_views = 'Acepted'`);
     },
 
     allByCat: catId => {
@@ -10,11 +18,11 @@ module.exports = {
     },
 
     pageByCat: (catId, limit, offset) => {
-        return db.load(`select * from products where Cat = ${catId} limit ${limit} offset ${offset}`);
+        return db.load(`select * from products where Cat = ${catId} and can_views = 'Acepted' order by Date_Create DESC limit ${limit} offset ${offset}`);
     },
 
     countByCat: catId => {
-        return db.load(`select count(*) as total from products where Cat = ${catId}`);
+        return db.load(`select count(*) as total from products where Cat = ${catId} and can_views = 'Acepted'`);
     },
 
     single: id => {

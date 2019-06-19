@@ -32,51 +32,27 @@
         <li><a href="/" style="color: white;">Trang chủ</a></li>
 				<li><a href="/category/" style="color: white;"> Chuyên mục</a>
 					<ul style="z-index: 2;">
-						<li><a href="/category/economic/" >Kinh tế</a>
-							<ul>
-								<li><a href="/template/kinhte/chung_nong_nghiep.html">Nông nghiệp</a></li>
-                <li><a href="/template/kinhte/chung_hai_san.html">Hải sản</a></li>
-                <li><a href="/template/kinhte/chung_cong_nghiep.html">Công nghiệp</a></li>                 
+            {{#each this.parent_categories}}
+              <li><a href="/categories/{{ID}}/products" >{{Name}}</a>
+              <ul>
+                {{#each ../this.sub_categories}}
+                  {{#if_equal parent_id ../ID}}
+                    <li><a href="/categories/{{ID}}/products">{{Name}}</a></li>
+                  {{/if_equal}}
+                {{/each}}
 							</ul>
-						</li>
-						<li><a href="/template/vanhoa/chung">Văn hoá</a>
-							<ul>
-                  <li><a href="/template/vanhoa/chung_doisong.html">Đời sống</a></li>
-									<li><a href="/template/vanhoa/chung_anuong.html">Ăn uống</a></li>
-									<li><a href="/template/vanhoa/chung_lehoi.html">Lễ hội</a></li>
-									<li><a href="/template/vanhoa/chung_moitruong.htm">Môi trường</a></li>
-							</ul>
-            </li>
-              
-            <li><a href="/template/dulich/chung.html">Du lịch</a>
-							<ul>
-									<li><a href="/template/dulich/chung_trongnuoc.html">Trong nước</a></li>
-									<li><a href="/template/dulich/chung_ngoainuoc.html">Ngoài nước</a></li>
-							</ul>
-            </li>
-              
-            <li><a href="/template/giaitri/chung.html">Giải trí</a>
-							<ul>
-                  <li><a href="/template/giaitri/chung_dienanh.html">Điện ảnh</a></li>
-									<li><a href="/template/giaitri/chung_amnhac.html">Âm nhạc</a></li>
-									<li><a href="/template/giaitri/chung_thethao.html">Thể thao</a></li>
-									<li><a href="/template/giaitri/chung_trochoidientu.html">Trò chơi điện tử</a></li>
-              </ul>
-            </li>
-
-            <li><a href="/template/khac/chung.html">Khác</a></li>
+            {{/each}}
 				  </ul>
 			  </li>
       </ul>
-      {{!-- <ul class="nav navbar-nav navbar-right" id="nav-user-manament"></ul> --}}
       <form id = "frmSignout" action="/account/logout" method="POST"></form>
       <ul class="nav navbar-nav navbar-right">
         {{#if isAuthenticated}}
           <li style="margin-top:5%;"><a style="color: black; width: 205px; font-weight:50; border: 1px solid white; border-radius: 5%; background-color:#CCCCCC;padding-top:5px; padding-bottom:5px;">{{authUser}}</a>
             <ul style="z-index: 2;">
-              <li><a href="/account/profile">Xem thông tin tài khoản</a></li>
-              <li><a href="/template/change_password_view.html">Đổi mật khẩu</a></li>
-              <li><a href="/template/list_item_view_author_3.html">Quản lý bài viết</a></li>
+              <li><a href="/account/profile/{{authUserID}}">Xem thông tin tài khoản</a></li>
+              <li><a href="/account/change_password/{{authUserID}}">Đổi mật khẩu</a></li>
+              <li><a href="/admin/view_list_product/">Quản lý bài viết</a></li>
               <li><a href="javascript: $('#frmSignout').submit();">Đăng xuất</a></li>
             </ul>
           </li>

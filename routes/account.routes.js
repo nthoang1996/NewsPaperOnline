@@ -69,16 +69,91 @@ router.post('/login',(req, res, next) =>{
     })(req, res, next);
 })
 
-router.get('/profile', auth, (req, res, next) =>{
-    // res.render('vwAccount/login',{
-    //     layout: false
-    // });
-    res.end('profile');
+router.get('/profile/:id', auth, (req, res, next) =>{
+    id = req.params.id;
+    userModel.single(id)
+    .then((user) => {
+        user[0].f_Dob = user[0].f_Dob.getDate() + "/" + (user[0].f_Dob.getMonth() +1) + "/" + user[0].f_Dob.getFullYear();
+        res.render('vwAccount/profile',{
+            userLogin: user[0],
+        });
+    }).catch(next);
+})
+
+router.get('/profile/:id', auth, (req, res, next) =>{
+    id = req.params.id;
+    userModel.single(id)
+    .then((user) => {
+        user[0].f_Dob = user[0].f_Dob.getDate() + "/" + (user[0].f_Dob.getMonth() +1) + "/" + user[0].f_Dob.getFullYear();
+        res.render('vwAccount/profile',{
+            userLogin: user[0],
+        });
+    }).catch(next);
+})
+
+router.post('/profile/:id', auth, (req, res, next) =>{
+    id = req.params.id;
+    var dob = moment(req.body.date_of_birth, 'DD/MM/YYYY').format('YYYY-MM-DD');
+    var entity = {
+        f_Name: req.body.name,
+        f_Email: req.body.email,
+        f_Dob: dob,
+    };
+    userModel.update(entity, id)
+    .then(() => {
+        res.redirect('/');
+    }).catch(next);
+})
+
+router.get('/change_password/:id', auth, (req, res, next) =>{
+    id = req.params.id;
+    userModel.single(id)
+    .then((user) => {
+        res.render('vwAccount/change_password',{
+            userLogin: user[0],
+        });
+    }).catch(next);
+})
+
+router.get('/validate_password/:id&:old_password', auth, (req, res, next) =>{
+    id = req.params.id;
+    old_password = req.params.old_password;
+    userModel.single(id)
+    .then((user) => {
+        var ret = bcrypt.compareSync(old_password, user[0].f_Password);
+        if(ret){
+            res.send({
+                isValid:true,
+            });
+        }
+        res.send({
+            isValid:false,
+        });
+    }).catch(err => {
+        console.log(err);
+        res.end('error ocurred.');
+    });
+})
+
+router.post('/change_password/:id', auth, (req, res, next) =>{
+    id = req.params.id;
+    var saltRound=10;
+    var hash = bcrypt.hashSync(req.body.password, saltRound);
+    userModel.single(id)
+    .then(() => {
+        var entity = {
+            f_Password: hash,
+        };
+        userModel.update(entity, id)
+        .then(() => {
+            res.redirect('/');
+        }).catch(next);
+    }).catch(next);
 })
 
 router.post('/logout', auth, (req, res, next) => {
     req.logOut();
     res.redirect('/account/login');
-  })
+})
 
 module.exports = router;

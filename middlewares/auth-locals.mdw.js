@@ -1,9 +1,7 @@
 module.exports = (req, res, next) => {
-  // console.log("===============================================auth-locals");
-  // console.log(req);
-  if (req.user) {
-    res.locals.isAuthenticated = true;
-    res.locals.authUser = req.user;
-  }
+  console.log(req.user);
+  res.locals.isAuthenticated = true;
+  res.locals.authUser = "HoangNT";
+  res.locals.authUserID = "5";
   next();
 }

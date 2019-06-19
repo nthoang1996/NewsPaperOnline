@@ -18,10 +18,9 @@ module.exports = {
         return db.add('users', entity);
     },
 
-    update: entity => {
-        var id = entity.f_ID;
+    update: (entity, id) => {
         delete entity.f_ID;
-        return db.update('users', 'f_ID', entity, id);
+        return db.updateWithID('users', 'f_ID', entity, id);
     },
 
     delete: id => {

@@ -1,0 +1,121 @@
+{{#section 'css'}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+{{/section}}
+{{#section 'js'}}
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+<script>
+    $(function(){
+        $('#date_of_birth').datetimepicker({
+            format: 'd/m/Y',
+            timepicker: false,
+            mask: true,
+        });
+        $("#date_of_birth").val("{{this.userLogin.f_Dob}}");
+        $('#profileForm').validate({
+            rules:{
+                username:{
+                    required: true,
+                    remote: {
+                        url: '/account/is_available'
+                    }
+                },
+                name:{
+                    required:true
+                },
+                email:{
+                    required:true,
+                    email: true
+                },
+                password:{
+                    required: true,
+                    minlength: 6
+                },
+                confirm: {
+                    required: true,
+                    equalTo: $('[name = "password"]')
+                },
+                date_of_birth:{
+                    required: true
+                }
+                
+            },
+            messages:{
+                username:{
+                    required: 'Vui lòng nhập bút danh của bạn.',
+                    remote: 'Bút danh đã tồn tại. Vui lòng chọn bút danh khác'
+                },
+                name:{
+                    required: 'Vui lòng nhập tên của bạn.',
+                },
+                email:{
+                    required: 'Vui lòng nhập email của bạn.',
+                    email: 'Địa chỉ email của bạn không hợp lệ.'
+                },
+                password:{
+                    required: 'Vui lòng nhập mật khẩu.',
+                    minlength: 'Mật khẩu phải có ít nhất 6 kí tự.'
+                },
+                date_of_birth:{
+                    required: 'Vui lòng nhập ngày tháng năm sinh của bạn.'
+                },
+            },
+            errorElement: 'small',
+            errorClass: 'help-block my-text-danger',
+            highlight: function(e) {
+                $(e).removeClass('is-valid').addClass('my-is-invalid');
+            },
+            unhighlight: function(e) {
+                $(e).removeClass('my-is-invalid').addClass('is-valid');
+            },
+        })
+    })
+</script>
+{{/section}}
+<div class="container-fluid">
+  	<div class="row content" style="height: 800px;">
+    	<div class="col-sm-3 " style="padding: 0;background: #99CCFF; height: 100%; "></div>
+
+        <div class="col-sm-6" style = "height: 100%;">
+      	    <h4><small>Username > Xem danh sách chuyên mục > Thêm chuyên mục </small></h4>
+            <hr>
+			<div class="well">
+                <label class="label label-primary" style="font-size:15px;font-weight: bold;" >Thêm chuyên mục</label>
+                
+				<form novalidate action="" method="POST" id="profileForm" style="margin-top: 15px;">
+                    <div class="form-group">
+                        <label for='name' >Tên hiển thị:</label>
+                        <input type="text" class="form-control" id="Name"  name="name" value= "{{this.userLogin.f_Name}}">
+                    </div>
+                    <div class="form-group">
+                        <label for='username' >Bút danh:</label>
+                        <input type="text" class="form-control" id="username"  name="username" value= "{{this.userLogin.f_Username}}" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for='email' >Email đăng nhập:</label>
+                        <input type="text" class="form-control" id="email"  name="email" value= "{{this.userLogin.f_Email}}">
+                    </div>
+                    <div class="form-group">
+                        <label for='password' >Mật khẩu:</label>
+                        <input type="password" class="form-control" id="password" name="password" value= "{{this.userLogin.f_Password}}" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for='date_of_birth' >Ngày tháng năm sinh:</label>
+                        <input type="text" class="form-control" id="date_of_birth" name="date_of_birth">
+                    </div>
+                    <a class="btn btn-primary" href="/" role="button">
+                        <i class = "fa fa-backward" aria-hidden="true"></i>
+                        Quay trở lại
+                    </a>
+                    <button type="submit" class="btn btn-success" >
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        Lưu
+                    </button>
+            </form>
+			</div>
+			
+        </div>
+
+		<div class="col-sm-3"  style="padding: 0;background: #99CCFF;height: 100%;"></div>
+	</div>
+</div>

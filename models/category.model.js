@@ -6,7 +6,7 @@ module.exports = {
     },
 
     allWithDetails: ()=> {
-        return db.load(`select c.ID, c.Name, count(p.ID) as num_of_products from categories c left join products p on c.ID = p.Cat group by c.ID, c.Name`);
+        return db.load(`select c.ID, c.Name, c.parent_id, count(p.ID) as num_of_products from categories c left join products p on c.ID = p.Cat and p.can_views = 'Acepted' group by c.ID, c.Name`);
     },
 
     subCatWithCatID: id => {

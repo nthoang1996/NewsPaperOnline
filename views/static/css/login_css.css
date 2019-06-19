@@ -259,11 +259,3 @@ html {
   #icon {
     width:60%;
   }
-
-  .my-text-danger{
-    color: red !important;
-  }
-
-  .my-is-invalid {
-    border-bottom: 1px solid red !important;
-  }

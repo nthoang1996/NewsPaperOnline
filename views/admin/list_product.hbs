@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  	<div class="row content">
+    	<div class="col-sm-3 " style="padding: 0;background: #99CCFF; height: 100%; "></div>
+
+        <div class="col-sm-6" style = "height: 100%; overflow-y: scroll;" >
+      	    <h4><small>Username > Quản lý bài viết </small></h4>
+            <hr>
+			<div class="well">
+				<label class="label label-default" style="font-size:15px;font-weight: bold;" >Quản lý bài viết</label>
+				<hr>
+				<div class="text-right">
+					<a href="/demo/editor/" class="btn btn-primary" role="button">
+						<i class = "fa fa-plus" aria-hidden="true"></i>
+						Thêm bài viết mới
+					</a>
+				</div>
+				<table class="table" style="margin-top: 15px;">
+					<thead>
+						<tr>
+							<th scope="col" style="width:5%;">Mã bài viết</th>
+							<th scope="col" style="width:60%;">Tiêu đề</th>
+                            <th scope="col" style="width:15%;">Ngày đăng</th>
+                            <th scope="col" style="width:5%;">Lượt xem</th>
+                            <th scope="col" style="width:5%;">Duyệt</th>
+							<th scope="col" style="width:5%;"></th>
+							<th scope="col" style="width:5%;"></th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each this.products}}
+						<tr>
+							<th scope="row" >&nbsp;{{ID}}</th>
+							<td>{{Title}}</td>
+                            <td>{{Date_Create}}</td>
+                            <td>{{Views}}</td>
+                            <td>{{can_views}}</td>
+							<td><a class="btn btn-info" href="javascript:" ><i class="fa fa-eye"></i></a></td>
+							<td><a class="btn btn-success" href="#"><i class="fa fa-pencil"></i></a></td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+			
+        </div>
+
+		<div class="col-sm-3"  style="padding: 0;background: #99CCFF;height: 100%;"></div>
+	</div>
+</div>

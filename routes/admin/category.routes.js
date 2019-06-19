@@ -56,8 +56,7 @@ router.get('/view/:id', (req,res)=>{
             });
         }else {
             res.send({
-                error: true
-                
+                error: true 
             });
         }
     }).catch(err => {
@@ -116,10 +115,7 @@ router.post('/update', (req,res)=>{
     .then(n => {
         res.redirect('/admin/categories');
     })
-    .catch(err => {
-        console.log(err);
-        res.end('error ocurred.');
-    })
+    .catch(next);
 })
 
 router.post('/delete', (req,res)=>{
