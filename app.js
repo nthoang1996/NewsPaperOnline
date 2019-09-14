@@ -19,6 +19,8 @@ require('./middlewares/session')(app);
 require('./middlewares/passport')(app);
 require('./middlewares/upload')(app);
 
+var port = process.env.PORT || 8080;
+
 Handlebars.registerHelper('if_equal', function(a, b, opts) {
     if (a == b) {
         return opts.fn(this)
@@ -60,7 +62,7 @@ app.use((error, req, res, next) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Web Server is running at http://localhost:3000');
 })
 
